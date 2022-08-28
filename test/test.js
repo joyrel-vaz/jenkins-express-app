@@ -1,18 +1,8 @@
-var request = require('supertest');
-var app = require('../app.js');
 var assert = require("assert");
+const fn_og = require('../src/app').fn_og
 
-
-describe('app js test', function() {
-  describe('GET /', function() {
-     it('should respond to GET with empty path', function (done) {
-        request(app) 
-               .get('/')
-               .expect(200).
-               expect(res => {
-                assert.equal(res.text, 'Hello World!');
-              })
-               .end(done) 
+  describe('GET /og', function() {
+     it('should return ok status code', function () {
+        assert.equal(fn_og(), "joy")
      });
   });
-});

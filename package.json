@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "supertest": "^6.2.4"
+    "mocha": "^10.0.0",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.2"
   },
   "name": "express",
   "version": "1.0.0",
   "description": "testing express for jenkins",
   "main": "app.js",
-  "devDependencies": {
-    "mocha": "^10.0.0"
-  },
   "scripts": {
     "test": "mocha --recursive --exit",
-    "build": "npm install"
+    "start": "npx netlify-lambda serve src",
+    "build": "npx netlify-lambda build src"
   },
   "author": "",
   "license": "ISC"
