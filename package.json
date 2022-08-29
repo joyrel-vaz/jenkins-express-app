@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "mocha": "^10.0.0",
     "netlify-lambda": "^2.0.15",
     "serverless-http": "^3.0.2"
   },
@@ -10,10 +9,14 @@
   "description": "testing express for jenkins",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --recursive --exit",
+    "test": "mocha test --reporter mocha-junit-reporter",
     "start": "npx netlify-lambda serve src",
     "build": "npx netlify-lambda build src"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.2"
+  }
 }
